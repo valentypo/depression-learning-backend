@@ -8,6 +8,10 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def home():
+    return "🧠 Depression Learning Backend is running."
+
 @app.route('/api/predict', methods=['POST'])
 def predict():
     
