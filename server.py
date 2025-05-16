@@ -8,10 +8,11 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
-model = pickle.load(open('model.pkl', 'rb'))
-
 @app.route('/api/predict', methods=['POST'])
 def predict():
+    
+    model = pickle.load(open('model.pkl', 'rb'))
+    
     rename_map = {
         "age": "Age",
         "profession": "Profession",
