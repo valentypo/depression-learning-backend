@@ -8,15 +8,18 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
+try:
+    model = pickle.load(open('model.pkl', 'rb'))
+    print("Model loaded successfully.")
+except Exception as e:
+    print("Failed to load model:", str(e))
+
 @app.route("/")
 def home():
     return "🧠 Depression Learning Backend is running."
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
-    
-    model = pickle.load(open('model.pkl', 'rb'))
-    
     rename_map = {
         "age": "Age",
         "profession": "Profession",
