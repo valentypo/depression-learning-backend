@@ -16,7 +16,7 @@ except Exception as e:
 
 @app.route("/")
 def home():
-    return "🧠 Depression Learning Backend is running."
+    return "Depression Learning Backend is running."
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
@@ -28,12 +28,10 @@ def predict():
         "sleepDuration": "Sleep Duration",
         "academicPressure": "Academic Pressure",
         "studySatisfaction": "Study Satisfaction",
-        "workPressure": "Work Pressure",
         "degree": "Degree",
         "suicidalThoughts": "Have you ever had suicidal thoughts ?",
         "familyHistory": "Family History of Mental Illness",
-        "workStudyHours": "Work/Study Hours",
-        "jobSatisfaction": "Job Satisfaction",
+        "studyHours": "Study Hours",
         "financialStress": "Financial Stress",
         "gender": "Gender"
     }
