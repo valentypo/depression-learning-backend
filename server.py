@@ -6,7 +6,7 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app, origins=["https://machine-learning-mocha.vercel.app"])
+CORS(app, origins=["http://machine-learning-production-76a6.up.railway.app"])
 
 try:
     model = pickle.load(open('model.pkl', 'rb'))
